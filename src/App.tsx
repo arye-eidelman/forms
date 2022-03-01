@@ -7,7 +7,8 @@ function App() {
     <div>
       <nav>
         <Link to="/">Home</Link>
-        <Link to="/forms/new">Create Form</Link>
+        {' '}
+        <Link to="/forms/new">New Form</Link>
       </nav>
       <Outlet />
     </div>

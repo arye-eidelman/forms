@@ -1,45 +1,67 @@
 let forms = [
   {
-    id: 1995,
-    slug: "nlidbslibailngagnlinlgseng",
-    title: "Santa Monica",
-    amount: "$10,800",
-    createdAt: "12/05/1995",
-  },
-  {
-    id: 2000,
-    slug: "nlidbslibailfgthdlgseng",
-    title: "Stankonia",
-    amount: "$8,000",
-    createdAt: "10/31/2000",
-  },
-  {
-    id: 2003,
-    slug: "nlidbjtkdgnlinlgseng",
-    title: "Ocean Avenue",
-    amount: "$9,500",
-    createdAt: "07/22/2003",
-  },
-  {
-    id: 1997,
-    slug: "nlidbsjukrjfnlinlgseng",
-    title: "Tubthumper",
-    amount: "$14,000",
-    createdAt: "09/01/1997",
-  },
-  {
-    id: 1998,
-    slug: "nlijytjftlinlgseng",
-    title: "Wide Open Spaces",
-    amount: "$4,600",
-    createdAt: "01/27/1998",
+    id: 765456,
+    slug: "sdhgndbslibailngagnlinlg",
+    title: "Test Form",
+    description: "This is a test form",
+    createdBy: "example@gmail.com",
+    createdAt: "2022-01-01T00:00:00.000Z",
+    updatedAt: "2022-01-01T00:00:00.000Z",
+    acceptingSubmissions: true,
+    fields: [
+      {
+        title: "Full name",
+        subtitle: "Enter your full name",
+        slug: "full-name",
+        type: "text",
+        placeholder: "John Smith",
+        required: true,
+        validations: [
+          {
+            type: "minLength",
+            value: 3,
+          },
+          {
+            type: "maxLength",
+            value: 30,
+          }
+        ],
+      },
+      {
+        title: "Age",
+        subtitle: "Enter your age",
+        type: "number",
+        required: true,
+        validations: [
+          {
+            type: "min",
+            value: 0,
+          },
+          {
+            type: "max",
+            value: 100,
+          },
+          {
+            type: "integer",
+          }
+        ],
+      }
+    ]
   },
 ];
 
-export function getForms(slug?: string) {
+export function getForms() {
   return forms;
 }
 
 export function getForm(slug: string) {
   return forms.find(form => form.slug === slug);
 }
+export function toLowLevelInputType(type: string) {
+  return ({
+    emailAddress: "email",
+    phoneNumber: "tel",
+    text: "text",
+    number: "number"
+  })[type] || "text";
+};

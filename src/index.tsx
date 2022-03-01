@@ -10,24 +10,24 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />} >
-        <Route path="" element={<Home />} />
-        <Route path="forms" element={<Forms />}>
-          <Route path="new" element={<NewForm />} />
-          <Route path=":slug" element={<Form />} />
+  <React.StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} >
+          <Route path="" element={<Home />} />
+          <Route path="forms" element={<Forms />}>
+            <Route path="new" element={<NewForm />} />
+            <Route path=":slug" element={<Form />} />
+          </Route>
+          <Route path="*" element={
+            <main className="p-4">
+              <p>There's nothing here!</p>
+            </main>
+          } />
         </Route>
-        <Route path="forms/new" element={<NewForm />} />
-        <Route path="forms/:slug" element={<Form />} />
-        <Route path="*" element={
-          <main style={{ padding: "1rem" }}>
-            <p>There's nothing here!</p>
-          </main>
-        } />
-      </Route>
-    </Routes>
-  </BrowserRouter>,
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>,
   document.getElementById("root")
 );
 
