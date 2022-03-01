@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "./styles/tailwind.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Form from "./routes/Form";
+import Forms from "./routes/Forms";
 import Home from "./routes/Home";
 import NewForm from "./routes/NewForm";
 import App from "./App";
@@ -13,8 +14,17 @@ ReactDOM.render(
     <Routes>
       <Route path="/" element={<App />} >
         <Route path="" element={<Home />} />
+        <Route path="forms" element={<Forms />}>
+          <Route path="new" element={<NewForm />} />
+          <Route path=":slug" element={<Form />} />
+        </Route>
         <Route path="forms/new" element={<NewForm />} />
         <Route path="forms/:slug" element={<Form />} />
+        <Route path="*" element={
+          <main style={{ padding: "1rem" }}>
+            <p>There's nothing here!</p>
+          </main>
+        } />
       </Route>
     </Routes>
   </BrowserRouter>,
