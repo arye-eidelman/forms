@@ -1,9 +1,8 @@
+import { FC } from 'react';
 import { getForms } from "../data";
 import { Link, Outlet } from "react-router-dom";
 
-
-
-export default function Forms() {
+const Forms: FC = () => {
   let forms = getForms().sort((a, b) => a.id - b.id);
   return (
     <div>
@@ -20,8 +19,10 @@ export default function Forms() {
           <p className="p-1 w-36 inline-block">{new Date(form.createdAt).toDateString()}</p>
         </Link>
       ))}
-      
+
       <Outlet />
     </div>
   )
 }
+
+export default Forms;

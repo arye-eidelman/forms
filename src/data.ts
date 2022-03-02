@@ -57,11 +57,41 @@ export function getForms() {
 export function getForm(slug: string) {
   return forms.find(form => form.slug === slug);
 }
-export function toLowLevelInputType(type: string) {
-  return ({
-    emailAddress: "email",
-    phoneNumber: "tel",
-    text: "text",
-    number: "number"
-  })[type] || "text";
-};
+
+export const inputOptions = {
+  text: {
+    title: "Text",
+    type: "text",
+    highLevelType: "text",
+    placeholder: "Enter text",
+  },
+  paragraph: {
+    title: "Paragraph",
+    type: "text",
+    highLevelType: "paragraph",
+    placeholder: "Enter text",
+  },
+  number: {
+    title: "Number",
+    type: "number",
+    highLevelType: "number",
+    placeholder: "0",
+  },
+  emailAddress: {
+    title: "Email address",
+    type: "email",
+    highLevelType: "email",
+    placeholder: "example@example.com",
+  },
+  phoneNumber: {
+    title: "Phone number",
+    type: "tel",
+    highLevelType: "phoneNumber",
+    placeholder: "555-555-5555",
+  },
+  checkbox: {
+    title: "Checkbox",
+    type: "checkbox",
+    highLevelType: "checkbox",
+  },
+}
