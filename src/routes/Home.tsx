@@ -1,11 +1,8 @@
 import { FC } from 'react';
+import { Home } from '../components';
 
-const Home: FC = () => {
+export const HomePage: FC = () => {
   return (
-    <div>
-      <h1>Forms Home</h1>
-    </div>
+    <Home />
   )
 }
-
-export default Home;

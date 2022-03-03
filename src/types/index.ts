@@ -9,11 +9,11 @@ export type TFieldType
 export type TField = {
   id: string | number
   label: string
-  hint: string
+  hint?: string
   type: TFieldType
   required: boolean
-  defaultValue: string
-  placeholder: string
+  defaultValue?: string
+  placeholder?: string
   validations: any[]
 }
 
@@ -21,11 +21,11 @@ export type TForm = {
   id: string | number
   slug: string
   title: string
-  description: string
+  description?: string
   createdBy: string
-  fields: TField[]
   acceptingSubmissions: boolean
   createdAt: string
   updatedAt: string
   version: number
+  fields: TField[]
 }

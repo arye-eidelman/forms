@@ -2,8 +2,11 @@ import React, { FC } from "react";
 import { TField } from '../types'
 import { inputOptions } from '../data'
 
-const FormField: FC<{ field: TField, value: any, onChange: (value: any) => void }> = (props) => {
-  const { field, value, onChange } = props;
+export const FormField: FC<{
+  field: TField,
+  value: any,
+  onChange: (value: any) => void
+}> = ({ field, value, onChange }) => {
 
   return (
     <div className="m-2 shadow-md p-2 bg-orange-100 rounded-xl" key={field.id}>
@@ -42,5 +45,3 @@ const FormField: FC<{ field: TField, value: any, onChange: (value: any) => void 
     </div>
   )
 }
-
-export default FormField

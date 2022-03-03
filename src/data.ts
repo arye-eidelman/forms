@@ -1,18 +1,21 @@
-let forms = [
+import { v4 as uuidv4 } from 'uuid';
+import { TForm } from './types'
+let forms: TForm[] = [
   {
-    id: 765456,
+    id: uuidv4(),
     slug: "sdhgndbslibailngagnlinlg",
     title: "Test Form",
     description: "This is a test form",
     createdBy: "example@gmail.com",
+    acceptingSubmissions: true,
     createdAt: "2022-01-01T00:00:00.000Z",
     updatedAt: "2022-01-01T00:00:00.000Z",
-    acceptingSubmissions: true,
+    version: 1,
     fields: [
       {
-        title: "Full name",
-        subtitle: "Enter your full name",
-        slug: "full-name",
+        id: uuidv4(),
+        label: "Full name",
+        hint: "Enter your full name",
         type: "text",
         placeholder: "John Smith",
         required: true,
@@ -28,8 +31,9 @@ let forms = [
         ],
       },
       {
-        title: "Age",
-        subtitle: "Enter your age",
+        id: uuidv4(),
+        label: "Age",
+        hint: "Enter your age",
         type: "number",
         required: true,
         validations: [

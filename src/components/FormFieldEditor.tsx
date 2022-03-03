@@ -3,7 +3,7 @@ import { TField } from '../types'
 import { inputOptions } from '../data'
 // import slugify from 'slugify';
 
-const FormFieldEditor: FC<{
+export const FormFieldEditor: FC<{
   field: TField,
   setField: (field: TField) => void
   deleteField?: () => void
@@ -100,5 +100,3 @@ const FormFieldEditor: FC<{
       </div>
     );
   }
-
-export default FormFieldEditor
