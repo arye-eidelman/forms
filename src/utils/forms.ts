@@ -1,5 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
-import { TForm } from './types'
+
+import { TForm } from '../types'
+
 let forms: TForm[] = [
   {
     id: uuidv4(),
@@ -58,11 +60,26 @@ export function getForms() {
   return forms;
 }
 
+export function newForm(): TForm {
+  return {
+    id: uuidv4(),
+    slug: uuidv4(),
+    title: "",
+    description: "",
+    createdBy: "",
+    acceptingSubmissions: false,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+    version: 1,
+    fields: [],
+  };
+}
+
 export function getForm(slug: string) {
   return forms.find(form => form.slug === slug);
 }
 
-export const inputOptions = {
+export const fieldTypeOptions = {
   text: {
     title: "Text",
     type: "text",

@@ -1,6 +1,7 @@
-import React, { FC } from "react";
+import { FC } from "react";
+
 import { TField } from '../types'
-import { inputOptions } from '../data'
+import { fieldTypeOptions } from '../utils/forms'
 // import slugify from 'slugify';
 
 export const FormFieldEditor: FC<{
@@ -18,7 +19,7 @@ export const FormFieldEditor: FC<{
       <div className="ring-2 p-1 my-2">
         {/* controlls bar */}
         <div className="flex space-x-2 justify-between m-1 mb-3">
-          <h1>{inputOptions[field.type].title}</h1>
+          <h1>{fieldTypeOptions[field.type].title}</h1>
           <div className="flex space-x-2">
             <button onClick={() => moveField('up')}>Up</button>
             <button onClick={() => moveField('down')}>Down</button>

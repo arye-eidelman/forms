@@ -1,21 +1,12 @@
-import React, { FC } from "react";
+import { FC, useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
-import { Form, FormFieldEditor } from "../components";
-import { TField, TForm, TFieldType } from '../types'
 
-export const NewForm: FC = () => {
-  const [form, setForm] = React.useState<TForm>({
-    id: uuidv4(),
-    slug: uuidv4(),
-    title: "",
-    description: "",
-    createdBy: "",
-    fields: [],
-    acceptingSubmissions: false,
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
-    version: 1
-  });
+import { Form, FormFieldEditor } from "../components";
+import { TField, TFieldType, TForm } from '../types'
+import { newForm } from '../utils/forms';
+
+export const FormEditor: FC<{ form: TForm, saved: boolean }> = ({ form: originalForm, saved }) => {
+  const [form, setForm] = useState<TForm>(newForm());
 
   function createField(type: TFieldType) {
     setForm({

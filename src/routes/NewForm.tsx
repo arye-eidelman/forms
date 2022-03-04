@@ -1,8 +1,10 @@
-import React, { FC } from "react";
-import { NewForm } from "../components";
+import { FC } from "react";
+
+import { FormEditor } from "../components";
+import { newForm } from '../utils/forms';
 
 export const NewFormPage: FC = () => {
   return (
-    <NewForm />
+    <FormEditor form={newForm()} saved={false} />
   )
 }

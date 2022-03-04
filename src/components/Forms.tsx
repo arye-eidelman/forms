@@ -1,7 +1,7 @@
 import { FC } from 'react';
+import { Link, Outlet } from "react-router-dom";
 
 import { TForm } from '../types'
-import { Link, Outlet } from "react-router-dom";
 
 export const Forms: FC<{ forms: TForm[] }> = ({ forms }) => {
   return (

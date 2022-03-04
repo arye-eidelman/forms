@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./styles/tailwind.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import "./styles/tailwind.css";
 import { Form, Forms, Home, NewForm } from "./routes";
-import App from "./App";
+import { App } from "./components";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(

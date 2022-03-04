@@ -1,8 +1,7 @@
-import React from "react";
-import { Outlet, Link } from "react-router-dom";
+import { FC } from "react";
+import { Link, Outlet } from "react-router-dom";
 
-
-function App() {
+export const App: FC = () => {
   return (
     <div>
       <nav>
@@ -14,5 +13,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

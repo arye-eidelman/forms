@@ -1,6 +1,7 @@
-import React, { FC } from "react";
+import { FC } from "react";
+
 import { TField } from '../types'
-import { inputOptions } from '../data'
+import { fieldTypeOptions } from '../utils/forms'
 
 export const FormField: FC<{
   field: TField,
@@ -35,7 +36,7 @@ export const FormField: FC<{
         <input
           id={"form-field__" + field.id}
           className="px-3 py-2 rounded-md w-full"
-          type={inputOptions[field.type].type}
+          type={fieldTypeOptions[field.type].type}
           value={value}
           onChange={e => onChange(e.target.value)}
           placeholder={field.placeholder}

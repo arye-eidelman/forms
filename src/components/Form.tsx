@@ -1,6 +1,6 @@
-import React, { FC, useState } from "react";
-import { TForm } from '../types'
+import { FC, useState } from "react";
 import { FormField } from '../components'
+import { TForm } from '../types'
 
 const Placeholder: FC = ({ children }) => <span className="text-neutral-400">{children}</span>
 
