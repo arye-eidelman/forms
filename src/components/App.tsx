@@ -7,6 +7,8 @@ export const App: FC = () => {
       <nav>
         <Link to="/">Home</Link>
         {' '}
+        <Link to="/forms">Forms</Link>
+        {' '}
         <Link to="/forms/new">New Form</Link>
       </nav>
       <Outlet />

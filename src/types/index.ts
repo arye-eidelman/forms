@@ -23,6 +23,7 @@ export type TForm = {
   title: string
   description?: string
   createdBy: string
+  deletedAt?: string
   acceptingSubmissions: boolean
   createdAt: string
   updatedAt: string

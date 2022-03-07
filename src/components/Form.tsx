@@ -24,7 +24,7 @@ export const Form: FC<{ form: any, preview?: boolean }> = (props) => {
         {/* <span className="text-sm">Created {new Date(form.createdAt).toDateString()}</span> */}
         <p className="font-semibold">By: {form.createdBy || <Placeholder>author@email.placeholder</Placeholder>}</p>
 
-        {form.fields.map((field) =>
+        {(form.fields || []).map((field) =>
           <FormField
             key={field.id}
             field={field}

@@ -1,12 +1,15 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import { v4 as uuidv4 } from 'uuid';
 
 import { Form, FormFieldEditor } from "../components";
 import { TField, TFieldType, TForm } from '../types'
-import { newForm } from '../utils/forms';
 
-export const FormEditor: FC<{ form: TForm, saved: boolean }> = ({ form: originalForm, saved }) => {
-  const [form, setForm] = useState<TForm>(newForm());
+export const FormEditor: FC<{
+  form: TForm,
+  setForm: (form: TForm) => void
+  save: () => void
+  saved: boolean
+}> = ({ form, setForm, save, saved }) => {
 
   function createField(type: TFieldType) {
     setForm({
@@ -35,9 +38,14 @@ export const FormEditor: FC<{ form: TForm, saved: boolean }> = ({ form: original
   }
 
   return (
-    <div>
-      <h1>New Form Editor</h1>
-      <div className="m-4 px-4 py-3 bg-green-100 rounded-lg shadow-xl ring-4 ring-green-300
+    <div className="m-4 px-4 py-3 bg-green-100 rounded-lg shadow-xl ring-4 ring-green-300">
+      <div className="flex justify-between">
+        <h1>New Form Editor</h1>
+        <div>
+          <button className="p-2 m-1 bg-lime-200" onClick={() => save()}>Save</button>
+        </div>
+      </div>
+      <div className="
       sm:flex sm:justify-around">
         <div className="w-full">
           <div className="m-2">
@@ -73,7 +81,7 @@ export const FormEditor: FC<{ form: TForm, saved: boolean }> = ({ form: original
           <button className="p-2 m-1 bg-lime-200" onClick={() => createField("checkbox")}>Checkbox</button>
         </div >
         <div className="w-full pt-8 sm:pt-0">
-          <h2>Form Preview</h2>
+          <h2>Preview</h2>
           <Form form={form} />
         </div>
       </div >
